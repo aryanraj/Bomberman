@@ -9,3 +9,5 @@ In order to initialize the allegro4.2 library use the following code in terminal
 sudo apt-get install build-essential
 
 sudo apt-get install liballegro4.2-dev
+
+Use grabber inorder to edit the .dat files
