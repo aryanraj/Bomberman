@@ -15,6 +15,8 @@ void deinit();
 /*
           Bitmap pointers to point to the bitmap images
 */
+
+//Aaah !! So many bitmaps
 BITMAP *bmp;
 BITMAP *box;
 BITMAP *tembmp;
@@ -47,6 +49,7 @@ enum{NOENTRY,MAN,BORD,_BOX,DEATH,_BLAST,_BOMB};
 int color_enemy[6];
 
 /* Idetifiers for plscements and timers */
+//Such big array!!
 int initial[15][19]=
 { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
   -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,-1,
@@ -525,7 +528,7 @@ class enemy
           int xt[10];
           int yt[10];      
           int status[10];  //stures the health status the the ith enemy
-          int n_enemy;     
+          int n_enemy;     // keeps the count of number of enemies 
     public:
           enemy();   
           void level(int);
@@ -535,11 +538,13 @@ class enemy
      
 };
 
+// Constructor
 enemy::enemy()
 {      
                              
 }
 
+// Creates a new level
 void enemy::level(int leve)
 {
      unsigned int i,j,k;
@@ -660,7 +665,8 @@ void enemy::level(int leve)
 
 }
 
-void enemy::drawenemy(int ch,int i)   //print the enemy
+// Prints the enemies
+void enemy::drawenemy(int ch,int i)
 {
      static int xa[10],ya[10];
      masked_blit((BITMAP*)data[ch+enemy1].dat,bmp,0,0,xcord[i],ycord[i]-6,640,480);
@@ -670,6 +676,7 @@ void enemy::drawenemy(int ch,int i)   //print the enemy
      rectfill(tembmp,xa[i],ya[i],xa[i]+31,ya[i]+31,__enemy);
 }
 
+// Moves the enemies
 void enemy::move()
 {
      static int i,xte,yte,img=1;
@@ -737,6 +744,7 @@ void enemy::move()
      }
 }
 
+// Checks the moves for enemies
 void enemy::check_move(int xt,int yt,int i)
 {
        int xtem1=xcord[i]+xt,ytem1=ycord[i]+yt;
@@ -1371,12 +1379,6 @@ int main()
                                    ti1=clock();
                             }
                             ti2=ti1; 
-                            /*if(key[KEY_ENTER])//This part was for debugging part
-                            {
-                                 blit(tembmp,screen,0,0,0,0,640,480);             
-                                 clear_keybuf();
-                                 readkey();
-                            }*/
                             vsync();
                             blit(bmp,screen,0,0,0,0,640,480);
                             if(man_status!=0&&delay_man==-1)
@@ -1419,10 +1421,6 @@ int main()
                 helper();
                 while(key[KEY_ESC]);
                 goto start;
-           /*case 4:
-                _credits();
-                while(key[KEY_ESC]);
-                goto start;*/
            case 5:
                      break;
         }
