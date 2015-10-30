@@ -15,6 +15,8 @@ void deinit();
 /*
           Bitmap pointers to point to the bitmap images
 */
+
+//Aaah !! So many bitmaps
 BITMAP *bmp;
 BITMAP *box;
 BITMAP *tembmp;
@@ -47,6 +49,7 @@ enum{NOENTRY,MAN,BORD,_BOX,DEATH,_BLAST,_BOMB};
 int color_enemy[6];
 
 /* Idetifiers for plscements and timers */
+//Such big array!!
 int initial[15][19]=
 { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
   -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,-1,
