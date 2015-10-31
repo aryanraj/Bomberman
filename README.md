@@ -2,6 +2,9 @@ Bomberman
 =========
 
 Bomber Man game made in my school days.
+It is made in CPP and is a try to replicate the original **bomberman** game.
+
+
 This is made with the use of allegro gaming library. (library version allegro 4.2.1.0)
 
 In order to initialize the allegro4.2 library use the following code in terminal.
